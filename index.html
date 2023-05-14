@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+
+        }
+        body{
+            width: 100%;
+            
+        }
+        .backgroun{
+            width:100%;
+            height: 100vh;
+            display: grid;
+            background:url(images/bmii.jpg);
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size: cover ;
+            justify-content: center;
+            align-content: center;
+        }
+     
+        .main-content{
+            width: 100%;
+            display: grid;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid black;
+
+        }
+        .main-content h1{
+            font-family: sans-serif;
+            padding: 10px;
+            text-decoration: underline;
+        }
+        
+        .wei{
+            padding: 10px;
+            font-family: sans-serif;
+
+        }
+        .hei{
+            padding: 10px;
+            font-family: sans-serif;
+
+        }
+        input{
+            border: 1px solid black;
+            height:25px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        button{
+            cursor: pointer;
+            padding: 5px;
+            background-image: linear-gradient(100deg,rgb(230, 107, 107), rgb(57, 230, 115)  );
+            color:white;
+            border: 1px solid white;
+            border-radius: 3px;
+        }
+        .dec{
+            background-color: white;
+            font-family: cursive;
+            color:black;
+            font-weight: 550;
+        }
+        .det{
+            color:black;
+            font-family: cursive;
+            font-weight: 550;
+        }
+        
+    </style>
+    
+    <section>
+        <div class="backgroun">
+                <div class="main-content">
+                           <div class="m-h"> <h1>BODY MASS INDEX</h1></div>
+                            <div class="wei">
+                                <label for="">WEIGHT</label>
+                                <input  type="number" name="" id="wei1" placeholder="Weight in kg's"  >
+                            </div>
+                            <div class="hei">
+                                <label for="">HEIGHT</label>
+                                <input type="number" name="" id="hei1" placeholder="Height in foot eg='5.4'">
+                                <br><br>
+                                <div class="btn">
+                                    <button onclick="bmi1()">SUBMIT</button>
+                                </div>
+                                <br><br>
+                                <div class="dec" id="result"></div>
+                                <br>
+                                <div class="det" id="determine"></div>
+
+                            </div>
+                            
+                </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+            const height=document.getElementById('hei1');
+            const weight=document.getElementById('wei1');
+            const res=document.getElementById('result');
+            function bmi1()
+            {
+          
+           result.textContent=(weight.value)/(((height.value)*0.3048)*((height.value)*0.3048));
+           var resu=(weight.value)/(((height.value)*0.3048)*((height.value)*0.3048));
+           if(resu<=18.4)
+           {
+             determine.textContent="Underweight"
+           }
+           else if(resu>=18.5 && resu<=24.9){
+            determine.textContent="Normal"
+
+            }
+            else if(resu>=25.0 && resu<=39.9){
+            determine.textContent="Overweight"
+
+            }
+            else if(resu>=40.0){
+            determine.textContent="Obese"
+
+            }
+        }
+    </script>
+</body>
+</html>
